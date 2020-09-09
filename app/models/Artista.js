@@ -1,0 +1,61 @@
+'use strict'
+
+const fs = require('fs');
+
+let instrumentosJson = fs.readFileSync('/var/www/html/api/app/config/instrumentos.json');
+let instrumentos = JSON.parse(instrumentosJson);
+let localidadesJson = fs.readFileSync('/var/www/html/api/app/config/localidadesNombres.json');
+let localidades = JSON.parse(localidadesJson);
+let estilosMusicalesJson = fs.readFileSync('/var/www/html/api/app/config/estilos_musicales.json');
+let estilosMusicales = JSON.parse(estilosMusicalesJson);
+
+const mongoose = require('mongoose');
+
+var Empresa = mongoose.model('Oferta');
+
+const ArtistaSchema = new mongoose.Schema({
+	email: {
+		type: String,
+		required: true,
+		unique: true
+	},
+	instrumentos: {
+		type: [String],
+		enum: instrumentos
+	},
+	estilo: {
+		type: [String],
+		enum: estilosMusicales
+	},
+	nombre: {
+		type: String
+	},
+	password: {
+		type: String,
+		required: true
+	},
+	ciudad: {
+		type: String,
+		enum: localidades
+	},
+	foto: {
+		type: String
+	},
+	fechaCreacion: {
+		type: Date,
+		default: Date.now()
+	},
+	ofertasSolicitadas: [
+		{type: Schema.ObjectId, ref:"Oferta"}
+	],
+	ofertasPasadas: [
+		{type: Schema.ObjectId, ref:"Oferta"}
+	],
+	gethash: {
+		type:Boolean
+	}
+});
+
+const Artista = mongoose.model('Artista', ArtistaSchema);
+
+module.exports = Artista
