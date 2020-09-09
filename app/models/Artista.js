@@ -4,8 +4,6 @@ const fs = require('fs');
 
 const mongoose = require('mongoose');
 
-//var Oferta = mongoose.model('Oferta');
-
 const ArtistaSchema = new mongoose.Schema({
 	email: {
 		type: String,
@@ -35,12 +33,6 @@ const ArtistaSchema = new mongoose.Schema({
 		type: Date,
 		default: Date.now()
 	},
-	ofertasSolicitadas: [
-		{type: Schema.ObjectId, ref:"Oferta"}
-	],
-	ofertasPasadas: [
-		{type: Schema.ObjectId, ref:"Oferta"}
-	],
 	gethash: {
 		type:Boolean
 	}
