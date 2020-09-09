@@ -1,7 +1,7 @@
 # HearmeeAPI
 API REST for the application Hearmee.
 
-#### Requirements
+### Requirements
 To run this API you must have installed :
 - NodeJS
 - NPM
