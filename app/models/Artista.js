@@ -1,14 +1,14 @@
 'use strict'
 
 const fs = require('fs');
-
+/*
 let instrumentosJson = fs.readFileSync('./config/instrumentos.json');
 let instrumentos = JSON.parse(instrumentosJson);
 let localidadesJson = fs.readFileSync('./config/localidadesNombres.json');
 let localidades = JSON.parse(localidadesJson);
 let estilosMusicalesJson = fs.readFileSync('./config/estilos_musicales.json');
 let estilosMusicales = JSON.parse(estilosMusicalesJson);
-
+*/
 const mongoose = require('mongoose');
 
 //var Oferta = mongoose.model('Oferta');
@@ -20,12 +20,10 @@ const ArtistaSchema = new mongoose.Schema({
 		unique: true
 	},
 	instrumentos: {
-		type: [String],
-		enum: instrumentos
+		type: String
 	},
 	estilo: {
-		type: [String],
-		enum: estilosMusicales
+		type: String
 	},
 	nombre: {
 		type: String
@@ -35,8 +33,7 @@ const ArtistaSchema = new mongoose.Schema({
 		required: true
 	},
 	ciudad: {
-		type: String,
-		enum: localidades
+		type: String
 	},
 	foto: {
 		type: String
