@@ -25,7 +25,8 @@ $ npm i
   ##### 3. Run :
  ---
 ```sh
-$ node app
+$ cd ./app 
+$ npm run dev
 ```
 
 This app has not been developed nor tested for Windows. So I can only be sure that this works for Ubuntu enviroment.
