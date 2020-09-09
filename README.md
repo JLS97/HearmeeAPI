@@ -28,4 +28,5 @@ $ npm i
 $ node app
 ```
 
-This app has not been developed nor tested for Windows, but it should work if you have all requirements and dependencies installed.
+This app has not been developed nor tested for Windows. So I can only be sure that this works for Ubuntu enviroment.
+All I know is that there is an issue with nodemon and windows, but I have not research for more details or information.
