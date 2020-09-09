@@ -2,16 +2,16 @@
 
 const fs = require('fs');
 
-let instrumentosJson = fs.readFileSync('/var/www/html/api/app/config/instrumentos.json');
+let instrumentosJson = fs.readFileSync('./config/instrumentos.json');
 let instrumentos = JSON.parse(instrumentosJson);
-let localidadesJson = fs.readFileSync('/var/www/html/api/app/config/localidadesNombres.json');
+let localidadesJson = fs.readFileSync('./config/localidadesNombres.json');
 let localidades = JSON.parse(localidadesJson);
-let estilosMusicalesJson = fs.readFileSync('/var/www/html/api/app/config/estilos_musicales.json');
+let estilosMusicalesJson = fs.readFileSync('./config/estilos_musicales.json');
 let estilosMusicales = JSON.parse(estilosMusicalesJson);
 
 const mongoose = require('mongoose');
 
-var Empresa = mongoose.model('Oferta');
+//var Oferta = mongoose.model('Oferta');
 
 const ArtistaSchema = new mongoose.Schema({
 	email: {
@@ -45,12 +45,12 @@ const ArtistaSchema = new mongoose.Schema({
 		type: Date,
 		default: Date.now()
 	},
-	ofertasSolicitadas: [
+	/*ofertasSolicitadas: [
 		{type: Schema.ObjectId, ref:"Oferta"}
 	],
 	ofertasPasadas: [
 		{type: Schema.ObjectId, ref:"Oferta"}
-	],
+	],*/
 	gethash: {
 		type:Boolean
 	}

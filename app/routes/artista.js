@@ -52,7 +52,6 @@ Router.get('/',ArtistaCtrl.index) //te muestra todos los artistas GET https://he
 	  .post('/login',ArtistaCtrl.login)
 
 	  .post('/subirimagen/:id',md_upload,ArtistaCtrl.subirImagen)
-	  .post('/subirImagenMulter/:id', upload.single('file'), ArtistaCtrl.subirImagenMulter)
 
 	  .get('/getImagen',ArtistaCtrl.getImagen)
 

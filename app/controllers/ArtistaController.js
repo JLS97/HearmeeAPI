@@ -130,46 +130,6 @@ function subirImagen(req,res){
 
 }
 
-function subirImagenMulter(req, res) {
-	/* 
-	var artistaId = req.params.id;
-	var file_name = 'No subido ...';
-
-	if(req.files){
-		var file_path = req.files.image.path;
-		var file_split = file_path.split('\\');
-		var file_name = file_split[2];
-
-		console.log(file_split);
-		console.log(file_name);
-
-		var ext_split = file_name.split('\.');
-		var file_ext = ext_split[1];
-
-		if(file_ext == 'png' || file_ext == 'jpg'){
-			
-			Artista.findByIdAndUpdate(artistaId, {foto: file_name},(err,artistaUpdated) => {
-				if(!artistaUpdated){
-					res.status(403).send({message : 'El usuario no ha podido modificar la imagen.'});
-				}else {
-					res.status(200).send({artista: artistaUpdated});
-				}
-			});
-
-		}else{
-			res.status(500).send({message: 'Extension de archivo no valida'});
-		}
-
-
-	}else{
-		res.status(200).send({message: 'No has subido ninguna imagen'});
-	} */
-
-
-
-	return res.send(req.file);
-}
-
 function getImagen(req,res){
 	var imageFile = req.params.imageFile;
 	//var path_file = './uploads/artistas' + imageFile;
@@ -464,7 +424,6 @@ module.exports = {
 	findNombre,
 	createUser,
 	subirImagen,
-	subirImageMulter,
 	getImagen,
 	login,
 	findCiudad,
